@@ -1,91 +1,64 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Image from "next/image";
+import Socials from "./components/Socials";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
+    <main className="w-screen h-screen">
+      <div className="px-[20px] lg:px-[58px] pt-[17px] lg:py-[48px] pb-[116px] box-border ">
+        <Image src={"/devchallenges.svg"} width={135} height={18} alt="logo" />
+        <h1 className="pt-[33.53px] font-[600] text-[18px] leading-[25px] tracking-[-0.035em] text-[#333333]">
+          Join thousands of learners from around the world
+        </h1>
+        <p className="pt-[14.5px] font-[400] text-[16px] leading-[22px] tracking-[-0.035em] text-[#333333]">
+          Master web development by making real-life projects. There are
+          multiple paths for you to choose
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+        <div className="relative">
+          <Image
+            className="absolute top-[70%] left-[14px] translate-y-[-50%]"
+            src={"/email.svg"}
+            width={20}
+            height={16}
+            alt="email-icon"
+          />
+          <input
+            className="mt-[34.66px] box-border w-full py-[13px] pl-[46px] border border-[#BDBDBD] rounded-[8px] focus:outline-none placeholder:font-[400] placeholder:text-[16px] placeholder:leading-[22px] placeholder:tracking-[-0.035px] placeholder:text-[#828282]"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+          />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+        <div className="relative">
+          <Image
+            className="absolute top-[60%] left-[14px] translate-y-[-50%]"
+            src={"/password.svg"}
+            width={20}
+            height={16}
+            alt="password-icon"
+          />
+          <input
+            className="mt-[14.5px] box-border w-full py-[13px] pl-[46px] border border-[#BDBDBD] rounded-[8px] focus:outline-none placeholder:font-[400] placeholder:text-[16px] placeholder:leading-[22px] placeholder:tracking-[-0.035px] placeholder:text-[#828282]"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
         </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <button className="mt-[22.5px] box-border w-full py-[7px] bg-[#2F80ED] text-white text-[16px] leading-[22px] tracking-[-0.035em] rounded-[8px]">
+          Start coding now
+        </button>
+        <div className="mt-[31.45px] flex flex-col items-center">
+          <span className="font-[400] text-[14px] leading-[19px] tracking-[-0.035em] text-[#828282]">
+            or continue with these social profile
+          </span>
+          <Socials />
+        </div>
+        <div className="mt-[27px] font-[400] text-[#828282] text-[14px] leading-[19px] tracking-[-0.035em] text-center">
+          Already a member?
+          <span className="text-[#2D9CDB]">Login</span>
+        </div>
       </div>
     </main>
-  )
+  );
 }
